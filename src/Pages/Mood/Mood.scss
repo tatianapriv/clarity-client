@@ -1,0 +1,22 @@
+.mood {
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__slider {
+    
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: blueviolet;
+  }
+}
+
+
+
+  

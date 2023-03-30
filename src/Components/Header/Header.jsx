@@ -9,9 +9,9 @@ import CircularSlider from "../CircularSlider/CircularSlider";
 export default function Header() {
   return (
     <header>
-      <div className="header__container">
-        <h1 className="header__text-light">Clarity</h1>
-        <div className="header__cta">
+      {/* <div className="header__container">
+        <h1 className="header__text-light">Clarity</h1> */}
+        {/* <div className="header__cta">
           <a href="" className="header__btn">
             Log In
           </a>
@@ -20,21 +20,21 @@ export default function Header() {
           </a>
         </div>
         <div className="header__picture">
-          <CircularSlider />
+          <CircularSlider /> */}
           {/* <img className="header__image" src={blue} alt="background" /> */}
-        </div>
+        {/* </div> */}
         <a href="#contact" className="header__scroll-down">
           Scroll Down
         </a>
-        <div className="header__socials">
+        {/* <div className="header__socials">
           <a href="https://linkedin.com" target="_blank">
             <CiLinkedin />
           </a>
           <a href="https://github.com" target="_blank">
             <VscGithub />
           </a>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </header>
   );
 }
