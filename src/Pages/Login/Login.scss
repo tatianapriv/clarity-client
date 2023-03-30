@@ -1,0 +1,53 @@
+.login {
+    height: 50rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(rgba(238, 69, 69, 0.5), rgba(255, 255, 255, 0.5)),
+      url(../../../Assets/pexels-taras-kots-94206223.jpg);
+    background-size: cover;
+  
+    &__form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    &__title {
+      font-size: 50px;
+    }
+  
+    &__label {
+      margin: 10px, 0;
+    }
+  
+    &__input {
+      padding: 10px;
+      background-color: white;
+      border: none;
+    }
+  
+    &__buttonLogin {
+      margin-top: 20px;
+      cursor: pointer;
+      background-color: lightcoral;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      padding: 10px;
+    }
+  
+    &__buttonRegister {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: teal;
+      cursor: pointer;
+      border: none;
+      padding: 10px;
+      color: white;
+      border-radius: 10px;
+    }
+  }
+  

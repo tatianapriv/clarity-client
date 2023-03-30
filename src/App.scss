@@ -1,0 +1,116 @@
+@use "./Styles/Partials/variables" as *;
+@use "./Styles/Partials/mixin" as *;
+@use "./Styles/Partials/fonts" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,600;1,100;1,200&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.App {
+  // background-color: $primary-background;
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(157, 132, 255, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  scroll-behavior: smooth;
+  font-family: "Raleway", sans-serif;
+  color: $third-color;
+  line-height: 1.7rem;
+}
+
+.container {
+  width: $container-width-sm;
+  margin: 0 auto;
+  @include tablet {
+    width: $container-width-md;
+  }
+  @include desktop {
+    width: $container-width-lg;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+section {
+  margin-top: 8rem;
+  @include tablet {
+    margin-top: 6rem;
+  }
+  @include desktop {
+    height: 100vh;
+  }
+}
+
+section > h2,
+section > h5 {
+  text-align: center;
+  color: $fourth-color;
+}
+
+section > h2 {
+  margin-bottom: 2rem;
+  @include desktop {
+    color: $primary-color;
+    margin-bottom: 3rem;
+  }
+}
+
+.text-light {
+  color: $fourth-color;
+}
+
+a {
+  color: $primary-color;
+  transition: $transition;
+}
+
+a:hover {
+  color: $third-color;
+}
+
+.btn {
+  width: max-content;
+  display: inline-block;
+  color: $primary-color;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid $primary-color;
+  transition: $transition;
+}
+
+.btn:hover {
+  background: $third-color;
+  color: $primary-background;
+  border-color: transparent;
+}
+
+.btn-primary {
+  background: $primary-color;
+  color: $primary-background;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
