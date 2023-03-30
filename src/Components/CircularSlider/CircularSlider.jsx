@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Slider from "@fseehawer/react-circular-slider";
+import "./CircularSlider.scss"
+import blue from "../../Assets/bluegradient.jpg";
 
 function CircularSlider() {
   console.log("hello");
   return (
+   <div className="wheel"> 
+    
     <Slider
       label="I feel"
       labelColor="#005a58"
@@ -19,6 +23,7 @@ function CircularSlider() {
         console.log("value: ", value);
       }}
     />
+    </div>
   );
 }
 export default CircularSlider;

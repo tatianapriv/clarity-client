@@ -9,9 +9,7 @@ import CircularSlider from "../CircularSlider/CircularSlider";
 export default function Header() {
   return (
     <header>
-      <div className="container header__container">
-    
-      
+      <div className="header__container">
         <h1 className="header__text-light">Clarity</h1>
         <div className="header__cta">
           <a href="" className="header__btn">
@@ -22,8 +20,8 @@ export default function Header() {
           </a>
         </div>
         <div className="header__picture">
-        <CircularSlider />
-          <img className="header__image" src={blue} alt="background" />
+          <CircularSlider />
+          {/* <img className="header__image" src={blue} alt="background" /> */}
         </div>
         <a href="#contact" className="header__scroll-down">
           Scroll Down

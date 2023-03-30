@@ -9,17 +9,25 @@ export default function Navbar() {
   const [activeNav, setActiveNav] = useState("#");
   return (
     <nav className="nav">
-      <a className={`nav__icon ${activeNav === "#" ? "active" : ""}`} href="#">
+      <a
+        className={`nav__icon ${activeNav === "#" ? "active" : ""}`}
+        href="#"
+        onClick={() => setActiveNav("#")}
+      >
         <TbHome />
       </a>
       <a
-        className="nav__icon"
         href="#login"
+        className={`nav__icon ${activeNav === "#login" ? "active" : ""}`}
         onClick={() => setActiveNav("#login")}
       >
         <HiOutlineUserCircle />
       </a>
-      <a className="nav__icon" href="#createaccount">
+      <a
+        className={`nav__icon ${activeNav === "#register" ? "active" : ""}`}
+        href="#register"
+        onClick={() => setActiveNav("#login")}
+      >
         <IoIosCreate />
       </a>
     </nav>
