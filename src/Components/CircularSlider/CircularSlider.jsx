@@ -16,10 +16,11 @@ function CircularSlider() {
         progressSize={24}
         trackColor="#eeeeee"
         trackSize={24}
-        data={["Good", "Bad"]} //...
-        dataIndex={10}
+        // data={["Good", "Bad"]} //...
+        dataIndex={moodValue}
         onChange={(value) => {
           console.log("value: ", value);
+          
         }}
       />
     </div>

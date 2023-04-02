@@ -14,13 +14,7 @@ function Test() {
   return (
     
     <div className={animationClass}>
-      <nav>
-  {/* <OtherNavbar /> */}
-  <div class="logo">
-    <a href="#">
-      <img src={eye} alt="Logo" />
-    </a>
-  </div>
+   
   <ul className={`menu ${menuVisible ? "visible" : ""}`}>
     <li>
       <a href="#">Home</a>
@@ -40,7 +34,7 @@ function Test() {
     <span></span>
     <span></span>
   </div>
-</nav>
+
 
       <Mood />
     </div>
