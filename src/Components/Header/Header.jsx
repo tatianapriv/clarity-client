@@ -18,23 +18,20 @@ export default function Header() {
           <a href="" className="btn header__btn-primary">
             Sign Up
           </a>
-        </div>
-        <div className="header__picture">
-          <CircularSlider /> */}
-          {/* <img className="header__image" src={blue} alt="background" /> */}
-        {/* </div> */}
-        <a href="#contact" className="header__scroll-down">
+        </div> */}
+      
+        {/* <a href="#contact" className="header__scroll-down">
           Scroll Down
         </a>
-        {/* <div className="header__socials">
+        <div className="header__socials">
           <a href="https://linkedin.com" target="_blank">
             <CiLinkedin />
           </a>
           <a href="https://github.com" target="_blank">
             <VscGithub />
           </a>
-        </div> */}
-      {/* </div> */}
+        </div>
+      </div> */}
     </header>
   );
 }

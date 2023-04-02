@@ -7,6 +7,7 @@
     -webkit-animation: Gradient 15s ease infinite;
     -moz-animation: Gradient 15s ease infinite;
     animation: Gradient 15s ease infinite;
+ 
     }
   
     // .test {
@@ -108,6 +109,10 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    
+    transition: all 0.3s ease;
+  transform: translateX(-100%);
+  opacity: 0;
   }
   
   .menu li {
@@ -145,5 +150,18 @@
     .hamburger-menu {
       display: block;
     }
+  }
+  
+  .menu.visible {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid gray;
+    transform: translateX(0);
+    opacity: 1;
   }
   

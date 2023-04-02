@@ -2,38 +2,46 @@ import React, { useState } from "react";
 import "./Test.scss";
 import eye from "../../Assets/eye.svg";
 import Mood from "../Mood/Mood.jsx";
+// import OtherNavbar from "../../Components/OtherNavbar/OtherNavbar";
 
 function Test() {
   const [animationClass, setAnimationClass] = useState("test");
-
+  const [menuVisible, setMenuVisible] = useState(false);
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
+  
   return (
+    
     <div className={animationClass}>
       <nav>
-        <div class="logo">
-          <a href="#">
-            <img src={eye} alt="Logo" />
-          </a>
-        </div>
-        <ul className="menu">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-        <div class="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+  {/* <OtherNavbar /> */}
+  <div class="logo">
+    <a href="#">
+      <img src={eye} alt="Logo" />
+    </a>
+  </div>
+  <ul className={`menu ${menuVisible ? "visible" : ""}`}>
+    <li>
+      <a href="#">Home</a>
+    </li>
+    <li>
+      <a href="#">About</a>
+    </li>
+    <li>
+      <a href="#">Services</a>
+    </li>
+    <li>
+      <a href="#">Contact</a>
+    </li>
+  </ul>
+  <div class="hamburger-menu" onClick={toggleMenu}>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
       <Mood />
     </div>
   );

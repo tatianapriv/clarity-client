@@ -1,16 +1,19 @@
 import CircularSlider from "@fseehawer/react-circular-slider";
 import React from "react";
 import { useState } from "react";
-import { useSpring } from 'react-spring';
+import { useSpring } from "react-spring";
 import "./Mood.scss";
-
 
 function getMoodFromValue(moodValue) {
   let mood = "";
-  if (moodValue > 50) {
+  if (moodValue > 90) {
+    mood = "amazing";
+  } else if (moodValue > 70) {
+    mood = "very good";
+  } else if (moodValue > 50) {
     mood = "good";
-  } else {
-    mood = "bad";
+  } else if (moodValue === 50) {
+    mood = "okay";
   }
   return mood;
 }
@@ -20,32 +23,29 @@ function Mood() {
   const [mood, setMood] = useState("");
   return (
     <div>
-        <section className="mood">
-      <div className="mood__container">
-        <CircularSlider
-          dataIndex={moodValue}
-          min={0}
-          max={100}
-          onChange={(value) => {
-            console.log(value);
-            setMoodValue(value);
-            setMood(getMoodFromValue(value));
-          }}
-          renderLabelValue={
-            <div className="mood__slider">
-              {mood}
-              {/* {moodValue} */}
-            </div>
-          }
-        />
-      </div>
+      <section className="mood">
+        <div className="mood__container">
+          <CircularSlider
+            dataIndex={moodValue}
+            min={0}
+            max={100}
+            onChange={(value) => {
+              console.log(value);
+              setMoodValue(value);
+              setMood(getMoodFromValue(value));
+            }}
+            renderLabelValue={
+              <div className="mood__slider">
+                {mood}
+                {/* {moodValue} */}
+              </div>
+            }
+          />
+        </div>
       </section>
 
-      <section className="form">
-        
-      </section>
+      <section className="form"></section>
     </div>
-    
   );
 }
 
