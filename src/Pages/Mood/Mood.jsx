@@ -1,10 +1,10 @@
 import CircularSlider from "@fseehawer/react-circular-slider";
 import React from "react";
 import { useState } from "react";
-import { useSpring } from "react-spring";
+
 import "./Mood.scss";
 
-function getMoodFromValue(moodValue) {
+export const getMoodFromValue = (moodValue) => {
   let mood = "";
   if (moodValue < 15) {
     mood = "awful";
@@ -28,9 +28,9 @@ function Mood() {
   const [moodValue, setMoodValue] = useState(0);
   const [mood, setMood] = useState("");
   return (
-    <div>
+    <div className="container">
       <section className="mood">
-        <h2>Choose your current mood</h2>
+        <h2 className="mood__title">Choose your current mood</h2>
         <div className="mood__container">
           <CircularSlider
             dataIndex={moodValue}
@@ -53,7 +53,7 @@ function Mood() {
         </div>
       </section>
 
-      <section className="form">
+      <form className="form">
         <div className="form__box">
           <input
             type="text"
@@ -61,7 +61,11 @@ function Mood() {
             placeholder="What's going on?"
           />
         </div>
-      </section>
+        <div className="button">
+      <button>Done</button>
+      </div>
+      </form>
+
     </div>
   );
 }

@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 // import Header from "./Components/Header/Header";
 // import CircularSlider from "./Components/CircularSlider/CircularSlider";
-import Navbar from "./Components/Navbar/Navbar";
+// import Navbar from "./Components/Navbar/Navbar";
 import Main from "./Pages/Main/Main";
 // import Main2 from "./Components/Main2/Main2"
 // import Mood from "./Pages/Mood/Mood";
 import Test from "./Pages/Test/Test";
+import UserProfile from "./Pages/UserProfile/UserProfile";
 // import MenuTest from "./Components/MenuTest/MenuTest";
 // import { CiLinkedin } from "react-icons/ci";
 // import { VscGithub } from "react-icons/vsc";
@@ -15,13 +16,14 @@ import Test from "./Pages/Test/Test";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
           {/* <Route path="/mood" element={<Mood />} /> */}
           <Route path="/test" element={<Test />} />
+          <Route path="/user" element={<UserProfile />} />
           {/* <Route path="/menutest" element={<MenuTest />} />  */}
         </Routes>
       </BrowserRouter>

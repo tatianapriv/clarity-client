@@ -1,15 +1,15 @@
 import React from "react";
-import Navbar from "../../Components/Navbar/Navbar";
+// import Navbar from "../../Components/Navbar/Navbar";
 import "./Main.scss";
 // import Header from "../../Components/Header/Header";
 
 export default function Main() {
   return (
-    <div>
-      <Navbar />
+    <div className="main">
+      {/* <Navbar /> */}
 
       <div class="content">
-
+<h1>Focused Mind, Peaceful Heart</h1>
     <p> Welcome to Clarity, a web-based application designed to help you
             navigate the vast and ever-changing landscape of your emotional
             well-being. Like the stars that dot the night sky, our emotions can
