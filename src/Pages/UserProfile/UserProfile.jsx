@@ -1,7 +1,6 @@
 import React from "react";
 import "./UserProfile.scss";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import { Chart } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -44,38 +43,17 @@ export default function UserProfile() {
   }
 
   useEffect(() => {
-    // getMoodFromValue();
     getMoodData();
   }, []);
 
-  // const moodEntry = [
-  //   {
-  //     mood: 80,
-  //     date: "mon",
-  //   },
-  //   {
-  //     mood: 80,
-  //     date: "tues",
-  //   },
-  //   {
-  //     mood: 80,
-  //     date: "wed",
-  //   },
-  //   {
-  //     mood: 80,
-  //     date: "thur",
-  //   },
-  //   {
-  //     mood: 80,
-  //     date: "fri",
-  //   },
-  // ];
   const data = {
-    labels: moodData.map((data) => data.date),
+    labels: moodData
+      .slice(-8)
+      .map((data) => new Date(data.date).toLocaleString()),
     datasets: [
       {
         label: "Mood Chart",
-        data: moodData.map((data) => data.value),
+        data: moodData.slice(-8).map((data) => data.value),
         backgroundColor: "aqua",
         borderColor: "black",
         pointBorderColor: "aqua",
@@ -106,7 +84,6 @@ export default function UserProfile() {
 
   return (
     <div className="chart" id="myChart">
-      {/* <Line data={data} options={options}></Line> */}
       <Line data={data} options={options} />
     </div>
   );

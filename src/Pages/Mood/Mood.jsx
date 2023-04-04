@@ -9,10 +9,6 @@ import axios from "axios";
 
 export const api = process.env.REACT_APP_PORT;
 
-// useEffect(() => {
-//   postMood();
-// }, []);
-
 export const getMoodFromValue = (moodValue) => {
   let mood = "";
   if (moodValue < 15) {
@@ -40,17 +36,29 @@ function Mood() {
 
   const [moodValue, setMoodValue] = useState(0);
   const [mood, setMood] = useState("");
-
+  const currentDate = new Date();
+  const dateString = currentDate.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+  const timeString = currentDate.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
       .post(`${api}/mood`, {
         userId: "1234",
         value: moodValue,
-        date: Date.now(),
+        date: currentDate,
+        dateString: dateString,
+        timeString: timeString,
       })
       .then(() => {
-        alert("Thank you for uploading!");
+        // alert("Thank you for uploading!");
         navigate("/user");
       })
       .catch((err) => {
