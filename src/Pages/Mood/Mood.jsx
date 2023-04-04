@@ -1,8 +1,17 @@
 import CircularSlider from "@fseehawer/react-circular-slider";
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./Mood.scss";
+
+import axios from "axios";
+
+export const api = process.env.REACT_APP_PORT;
+
+// useEffect(() => {
+//   postMood();
+// }, []);
 
 export const getMoodFromValue = (moodValue) => {
   let mood = "";
@@ -22,11 +31,35 @@ export const getMoodFromValue = (moodValue) => {
     mood = "amazing";
   }
   return mood;
-}
+};
+
+// function postMood (moodEntry)
 
 function Mood() {
+  const navigate = useNavigate();
+
   const [moodValue, setMoodValue] = useState(0);
   const [mood, setMood] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post(`${api}/mood`, {
+        userId: "1234",
+        value: moodValue,
+        date: Date.now(),
+      })
+      .then(() => {
+        alert("Thank you for uploading!");
+        navigate("/user");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    event.target.reset();
+  };
+
   return (
     <div className="container">
       <section className="mood">
@@ -53,7 +86,11 @@ function Mood() {
         </div>
       </section>
 
-      <form className="form">
+      <form
+        onSubmit={(event) => handleSubmit(event)}
+        id="form"
+        className="form"
+      >
         <div className="form__box">
           <input
             type="text"
@@ -62,10 +99,9 @@ function Mood() {
           />
         </div>
         <div className="button">
-      <button>Done</button>
-      </div>
+          <button>Done</button>
+        </div>
       </form>
-
     </div>
   );
 }

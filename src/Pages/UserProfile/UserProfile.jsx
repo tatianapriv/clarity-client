@@ -3,16 +3,11 @@ import "./UserProfile.scss";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Chart } from "chart.js";
 import { Line } from "react-chartjs-2";
-// import React, { useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { api } from "../Mood/Mood";
 
 import {
-  // Chart as ChartJS,
-  // LineElement,
-  // CategoryScale, // x axis
-  // LinearScale, // y axis
-  // PointElement,
-  // Legend,
-  // Tooltip,
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
@@ -25,13 +20,6 @@ import {
 import { getMoodFromValue } from "../Mood/Mood";
 
 ChartJS.register(
-  // LineElement,
-  // CategoryScale, // x axis
-  // LinearScale, // y axis
-  // PointElement,
-  // Legend,
-  // Tooltip,
-  // Chart
   ChartDataLabels,
   CategoryScale,
   LinearScale,
@@ -42,50 +30,56 @@ ChartJS.register(
   Legend
 );
 
-// Chart.register(ChartDataLabels);
-
-// var DATA_COUNT = 8;
-// var labels = [];
-
-// Utils.srand(8);
-
-// for (var i = 0; i < DATA_COUNT; ++i) {
-//   labels.push('' + i);
-// }
-
 export default function UserProfile() {
-  const fakeData = [
-    {
-      mood: 80,
-      date: "mon",
-    },
-    {
-      mood: 80,
-      date: "tues",
-    },
-    {
-      mood: 80,
-      date: "wed",
-    },
-    {
-      mood: 80,
-      date: "thur",
-    },
-    {
-      mood: 80,
-      date: "fri",
-    },
-  ];
+  const [moodData, setMoodData] = useState([]); //array of videos
+  function getMoodData() {
+    axios
+      .get(`${api}/mood`)
+      .then((response) => {
+        setMoodData(response.data[0].values);
+      })
+      .catch((error) => {
+        console.log("error:", error);
+      });
+  }
+
+  useEffect(() => {
+    // getMoodFromValue();
+    getMoodData();
+  }, []);
+
+  // const moodEntry = [
+  //   {
+  //     mood: 80,
+  //     date: "mon",
+  //   },
+  //   {
+  //     mood: 80,
+  //     date: "tues",
+  //   },
+  //   {
+  //     mood: 80,
+  //     date: "wed",
+  //   },
+  //   {
+  //     mood: 80,
+  //     date: "thur",
+  //   },
+  //   {
+  //     mood: 80,
+  //     date: "fri",
+  //   },
+  // ];
   const data = {
-    labels: fakeData.map((data) => data.date),
+    labels: moodData.map((data) => data.date),
     datasets: [
       {
         label: "Mood Chart",
-        data: [6, 3, 9, 80],
+        data: moodData.map((data) => data.value),
         backgroundColor: "aqua",
         borderColor: "black",
         pointBorderColor: "aqua",
-        tension: 0.4,
+        tension: 0,
         datalabels: {
           backgroundColor: () => "aqua",
           borderRadius: 4,
@@ -100,44 +94,20 @@ export default function UserProfile() {
       },
     ],
   };
-  // const options = {
-  //   plugins: {
-  //     legend: true,
-  //     // datalabels: {
-  //     //   backgroundColor: function (context) {
-  //     //     return context.dataset.backgroundColor;
-  //     //   },
-  //     //   borderRadius: 4,
-  //     //   color: "white",
-  //     //   font: {
-  //     //     weight: "bold",
-  //     //   },
-  //     //   formatter: (num) => {
-  //     //     let mood = "";
-  //     //     if (num < 15) {
-  //     //       mood = "awful";
-  //     //     } else if (num <= 30) {
-  //     //       mood = "very bad";
-  //     //     } else if (num <= 50) {
-  //     //       mood = "bad";
-  //     //     } else if (num <= 60) {
-  //     //       mood = "okay";
-  //     //     } else if (num <= 75) {
-  //     //       mood = "good";
-  //     //     } else if (num <= 90) {
-  //     //       mood = "very good";
-  //     //     } else {
-  //     //       mood = "amazing";
-  //     //     }
-  //     //     return mood;
-  //     //   },
-  //     // },
-  //   },
-  // };
+  const options = {
+    scales: {
+      y: {
+        ticks: {
+          display: false, // This will remove the y-axis tick labels
+        },
+      },
+    },
+  };
+
   return (
     <div className="chart" id="myChart">
       {/* <Line data={data} options={options}></Line> */}
-      <Line data={data} />
+      <Line data={data} options={options} />
     </div>
   );
 }
