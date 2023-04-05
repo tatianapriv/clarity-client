@@ -32,6 +32,7 @@ export const getMoodFromValue = (moodValue) => {
 // function postMood (moodEntry)
 
 function Mood() {
+  const [comment, setComment] = useState("")
   const navigate = useNavigate();
 
   const [moodValue, setMoodValue] = useState(0);
@@ -49,6 +50,7 @@ function Mood() {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(comment)
     axios
       .post(`${api}/mood`, {
         userId: "1234",
@@ -56,6 +58,7 @@ function Mood() {
         date: currentDate,
         dateString: dateString,
         timeString: timeString,
+        comment: comment,
       })
       .then(() => {
         // alert("Thank you for uploading!");
@@ -104,6 +107,8 @@ function Mood() {
             type="text"
             className="form__input"
             placeholder="What's going on?"
+            value={comment}
+            onChange={(e)=> setComment(e.target.value)}
           />
         </div>
         <div className="button">

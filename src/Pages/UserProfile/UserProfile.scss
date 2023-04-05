@@ -2,3 +2,34 @@
     width: 600px;
     height: 300px;
 }
+
+
+.comments {
+
+  
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 10px;
+
+      
+  &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+     
+      
+      &__username {
+        margin: 0;
+      }
+      
+      &__timestamp {
+        margin-left: auto;
+      }
+      
+     &__content {
+        margin: 0;
+        line-height: 1.5;
+      }
+}

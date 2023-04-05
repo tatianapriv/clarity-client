@@ -82,9 +82,27 @@ export default function UserProfile() {
     },
   };
 
+  console.log("for Jackie", moodData);
+
   return (
-    <div className="chart" id="myChart">
-      <Line data={data} options={options} />
-    </div>
+    <>
+      <div className="chart" id="myChart">
+        <Line data={data} options={options} />
+      </div>
+
+      <div className="comments">
+        {moodData.slice(-3).map((data, index) => (
+          <li key={index}>
+            <div className="comments__header">
+              {/* <h4 className="comments__username">{data.user_name}</h4> */}
+              <span className="comments__timestamp">
+                {new Date(data.date).toLocaleString()}
+              </span>
+            </div>
+            <p className="comments__content">{data.comment}</p>
+          </li>
+        ))}
+      </div>
+    </>
   );
 }
