@@ -2,14 +2,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { useState } from "react";
 import "./App.scss";
 // import Header from "./Components/Header/Header";
-// import CircularSlider from "./Components/CircularSlider/CircularSlider";
 // import Navbar from "./Components/Navbar/Navbar";
 import Main from "./Pages/Main/Main";
-// import Main2 from "./Components/Main2/Main2"
-// import Mood from "./Pages/Mood/Mood";
 import Test from "./Pages/Test/Test";
 import UserProfile from "./Pages/UserProfile/UserProfile";
-// import MenuTest from "./Components/MenuTest/MenuTest";
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register"
 // import { CiLinkedin } from "react-icons/ci";
 // import { VscGithub } from "react-icons/vsc";
 
@@ -24,7 +22,8 @@ function App() {
           {/* <Route path="/mood" element={<Mood />} /> */}
           <Route path="/test" element={<Test />} />
           <Route path="/user" element={<UserProfile />} />
-          {/* <Route path="/menutest" element={<MenuTest />} />  */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} /> 
         </Routes>
       </BrowserRouter>
     </div>

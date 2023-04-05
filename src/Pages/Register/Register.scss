@@ -4,18 +4,20 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(rgba(238, 69, 69, 0.5), rgba(255, 255, 255, 0.5)),
-    url(../../../Assets/pexels-taras-kots-94206223.jpg);
+ background-color: black;
+   background-image: url(../../Assets/16.png);
   background-size: cover;
 
   &__form {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+
   }
 
   &__title {
-    font-size: 50px;
+    font-size: 2.5rem;
+
   }
 
   &__label {

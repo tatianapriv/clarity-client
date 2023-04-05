@@ -29,8 +29,6 @@ export const getMoodFromValue = (moodValue) => {
   return mood;
 };
 
-// function postMood (moodEntry)
-
 function Mood() {
   const [comment, setComment] = useState("")
   const navigate = useNavigate();
@@ -61,7 +59,6 @@ function Mood() {
         comment: comment,
       })
       .then(() => {
-        // alert("Thank you for uploading!");
         navigate("/user");
       })
       .catch((err) => {
