@@ -1,134 +1,133 @@
+.mood {
+  background: linear-gradient(135deg, #f97794 10%, #623aa2 100%);
+}
+
 .test {
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
 
-    height: 100vh;
-    color: #fff;
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-    background-size: 400% 400%;
-    -webkit-animation: Gradient 15s ease infinite;
-    -moz-animation: Gradient 15s ease infinite;
-    animation: Gradient 15s ease infinite;
- 
-    }
+.paused {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
 
-    
-  .paused {
-    -webkit-animation-play-state: paused; 
-    animation-play-state: paused;
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  @-webkit-keyframes Gradient {
-    0% {
-    background-position: 0% 50%
-    }
   50% {
-  background-position: 100% 50%
+    background-position: 100% 50%;
   }
   100% {
-  background-position: 0% 50%
+    background-position: 0% 50%;
   }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  @-moz-keyframes Gradient {
-    0% {
-    background-position: 0% 50%
-    }
   50% {
-  background-position: 100% 50%
+    background-position: 100% 50%;
   }
   100% {
-  background-position: 0% 50%
+    background-position: 0% 50%;
   }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  @keyframes Gradient {
-    0% {
-    background-position: 0% 50%
-    }
   50% {
-  background-position: 100% 50%
+    background-position: 100% 50%;
   }
   100% {
-  background-position: 0% 50%
+    background-position: 0% 50%;
   }
-  }
+}
 
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: transparent;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: transparent;
   height: 1rem;
-  }
-  
-  .logo {
-    width: 50px;
-  }
-  
-  .logo img {
-    display: block;
-    width: 100%;
-  }
-  
-  .menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    
-    transition: all 0.3s ease;
+}
+
+.logo {
+  width: 50px;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  transition: all 0.3s ease;
   transform: translateX(-100%);
   opacity: 0;
-  }
-  
-  .menu li {
-    margin-left: 20px;
-  }
-  
-  .menu li:first-child {
-    margin-left: 0;
-  }
-  
-  .menu li a {
-    display: block;
-    padding: 10px;
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .hamburger-menu {
+}
+
+.menu li {
+  margin-left: 20px;
+}
+
+.menu li:first-child {
+  margin-left: 0;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 30px;
+  height: 1.5px;
+  margin-bottom: 5px;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .menu {
     display: none;
-    cursor: pointer;
   }
-  
-  .hamburger-menu span {
+  .hamburger-menu {
     display: block;
-    width: 30px;
-    height: 1.5px;
-    margin-bottom: 5px;
-    background-color: white;
   }
-  
-  @media (max-width: 768px) {
-    .menu {
-      display: none;
-    }
-    .hamburger-menu {
-      display: block;
-    }
-  }
-  
-  .menu.visible {
-    display: block;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 200px;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid gray;
-    transform: translateX(0);
-    opacity: 1;
-  }
-  
+}
+
+.menu.visible {
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 200px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid gray;
+  transform: translateX(0);
+  opacity: 1;
+}

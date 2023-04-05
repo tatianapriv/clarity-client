@@ -5,10 +5,25 @@ import "./Main.scss";
 
 export default function Main() {
   return (
-    <div className="main">
-      {/* <Navbar /> */}
+    <>
+    {/* <Navbar />  */}
 
-      <div class="content">
+    
+    <section className="main">
+
+    <div className="company-logo">img</div>
+    <div className="nav">
+    <nav class="navbar">
+      <ul className="nav-items">
+        <li className="nav-item"><a href="#" class="nav-link">HOME</a></li>
+        <li className="nav-item"><a href="#" class="nav-link">Profile</a></li>
+        <li className="nav-item"><a href="#" class="nav-link"></a></li>
+        <li className="nav-item"><a href="#" class="nav-link">CONTACT</a></li>
+      </ul>
+    </nav>
+    </div>
+
+      <div className="content">
 <h1>Focused Mind, Peaceful Heart</h1>
     <p> Welcome to Clarity, a web-based application designed to help you
             navigate the vast and ever-changing landscape of your emotional
@@ -31,6 +46,7 @@ export default function Main() {
 </div>
 
    
-    </div>
+    </section>
+    </>
   );
 }

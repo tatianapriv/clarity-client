@@ -12,10 +12,11 @@ function Test() {
   };
   
   return (
-    
+    <section className="mood">
+      <div className="mood__container">
     <div className={animationClass}>
    
-  <ul className={`menu ${menuVisible ? "visible" : ""}`}>
+  {/* <ul className={`menu ${menuVisible ? "visible" : ""}`}>
     <li>
       <a href="#">Home</a>
     </li>
@@ -33,20 +34,15 @@ function Test() {
     <span></span>
     <span></span>
     <span></span>
-  </div>
+  </div> */}
 
 
       <Mood />
+      </div>
     </div>
+    </section>
   );
 
-  // You can also return the following if you want to add some text to the component:
-  // return (
-  //   <div className={animationClass}>
-  //     <h1>My Animated Background</h1>
-  //     <p>This is some text that goes with the animation</p>
-  //   </div>
-  // );
 }
 
 export default Test;
