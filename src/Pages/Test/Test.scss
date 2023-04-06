@@ -1,11 +1,14 @@
 .mood {
-  background: linear-gradient(135deg, #f97794 10%, #623aa2 100%);
+  // background: linear-gradient(135deg, #f97794 10%, #623aa2 100%);
+  background-image: url(../../Assets/Clean/23.jpg);
+  background-size: cover;
+  height: 100vh;
 }
 
 .test {
   height: 100vh;
   color: #fff;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;

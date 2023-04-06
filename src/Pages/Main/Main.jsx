@@ -11,14 +11,14 @@ export default function Main() {
     
     <section className="main">
 
-    <div className="company-logo">img</div>
+    
     <div className="nav">
     <nav class="navbar">
       <ul className="nav-items">
-        <li className="nav-item"><a href="#" class="nav-link">HOME</a></li>
-        <li className="nav-item"><a href="#" class="nav-link">Profile</a></li>
-        <li className="nav-item"><a href="#" class="nav-link"></a></li>
-        <li className="nav-item"><a href="#" class="nav-link">CONTACT</a></li>
+      <div className="company-logo">Clarity</div>
+        <li className="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li className="nav-item"><a href="#" class="nav-link">Login</a></li>
+ 
       </ul>
     </nav>
     </div>

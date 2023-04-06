@@ -13,8 +13,8 @@ function Test() {
   
   return (
     <section className="mood">
-      <div className="mood__container">
-    <div className={animationClass}>
+      {/* <div className="mood__container"> */}
+    {/* <div className={animationClass}> */}
    
   {/* <ul className={`menu ${menuVisible ? "visible" : ""}`}>
     <li>
@@ -38,8 +38,8 @@ function Test() {
 
 
       <Mood />
-      </div>
-    </div>
+      {/* </div> */}
+    {/* </div> */}
     </section>
   );
 

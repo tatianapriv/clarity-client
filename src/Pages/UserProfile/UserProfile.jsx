@@ -62,7 +62,7 @@ export default function UserProfile() {
         datalabels: {
           backgroundColor: () => "aqua",
           borderRadius: 4,
-          color: "white",
+          color: "black",
           font: {
             weight: "bold",
             color: "black"
@@ -92,7 +92,6 @@ export default function UserProfile() {
       <div className="chart" id="myChart">
         <Line data={data} options={options} />
       </div>
-      {/* <img className="userProfile__noise" src={gradient} alt="gradient"/> */}
 
       <div className="comments">
         {moodData.slice(-3).map((data, index) => (
