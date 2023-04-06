@@ -65,7 +65,7 @@ export default function UserProfile() {
           color: "black",
           font: {
             weight: "bold",
-            color: "black"
+            color: "black",
           },
           formatter: (num) => {
             return getMoodFromValue(num);
@@ -82,31 +82,39 @@ export default function UserProfile() {
         },
       },
     },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: (value) => {
+            console.log("FORMATTED: ", value.formattedValue);
+            return getMoodFromValue(value.formattedValue);
+          },
+          footer: () => "lol",
+        },
+      },
+    },
   };
-
-
 
   return (
     <>
-    <section className="userProfile">
-      <div className="chart" id="myChart">
-        <Line data={data} options={options} />
-      </div>
+      <section className="userProfile">
+        <div className="chart" id="myChart">
+          <Line data={data} options={options} />
+        </div>
 
-      <div className="comments">
-        {moodData.slice(-3).map((data, index) => (
-          <li key={index}>
-            <div className="comments__header">
-              {/* <h4 className="comments__username">{data.user_name}</h4> */}
-              <span className="comments__timestamp">
-                {new Date(data.date).toLocaleString()}
-              </span>
-              
-            </div>
-            <p className="comments__content">{data.comment}</p>
-          </li>
-        ))}
-      </div>
+        <div className="comments">
+          {moodData.slice(-3).map((data, index) => (
+            <li key={index}>
+              <div className="comments__header">
+                {/* <h4 className="comments__username">{data.user_name}</h4> */}
+                <span className="comments__timestamp">
+                  {new Date(data.date).toLocaleString()}
+                </span>
+              </div>
+              <p className="comments__content">{data.comment}</p>
+            </li>
+          ))}
+        </div>
       </section>
     </>
   );
