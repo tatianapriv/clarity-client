@@ -67,9 +67,9 @@ export default function UserProfile() {
             weight: "bold",
             color: "black",
           },
-          formatter: (num) => {
-            return getMoodFromValue(num);
-          },
+          // formatter: (num) => {
+          //   return getMoodFromValue(num);
+          // },
         },
       },
     ],
@@ -89,7 +89,6 @@ export default function UserProfile() {
             console.log("FORMATTED: ", value.formattedValue);
             return getMoodFromValue(value.formattedValue);
           },
-          footer: () => "lol",
         },
       },
     },

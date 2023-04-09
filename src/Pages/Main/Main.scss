@@ -2,7 +2,7 @@
 @use "../../Styles/Partials/mixin" as *;
 @use "../../Styles/Partials/fonts" as *;
 
-// @import url(https://fonts.googleapis.com/css?family=Oswald:700|Quattrocento);
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
 
 a {
   text-decoration: none;
@@ -19,24 +19,25 @@ a {
   justify-content: center;
   margin: 0;
   color: white;
-  font-family: "Signore - Serif Typeface";
+  font-family: "Quicksand", sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1.4rem;
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   z-index: 1;
   padding: 4%;
-  text-align: left;
+  //   text-align: justify;
   font-size: 1rem;
-
+  margin-left: 5rem;
+  margin-right: 5rem;
   background-size: cover;
   background-position: center;
   &:before,
   &:after {
     content: "";
-    position: absolute;
+    // position: absolute;
   }
   &:before {
     mix-blend-mode: overlay;
@@ -58,10 +59,11 @@ a {
 
 p {
   padding: 1em 0;
-  letter-spacing: 1px;
+
   border-bottom: 0.5px rgb(241, 233, 213) solid;
   border-top: 0.5px rgb(252, 196, 243) solid;
   //  backdrop-filter: blur(5px);
+  margin-bottom: 3rem;
 }
 
 h1 {
@@ -72,6 +74,7 @@ h1 {
   line-height: 1.125;
   text-transform: uppercase;
   text-align: center;
+  padding-bottom: 2rem;
 }
 
 .main {
@@ -84,14 +87,14 @@ h1 {
 .nav {
   display: flex;
   justify-content: space-between;
-  padding-top: 1rem;
+  padding-top: 2rem;
 
-  padding-right: 2rem;
+  padding-right: 4rem;
   color: white;
   text-decoration: none;
-  border-bottom: rgb(248, 241, 241) 0.2px solid;
+  //   border-bottom: rgb(248, 241, 241) 0.2px solid;
   width: 95%;
-  margin-left: 1.5rem;
+  margin-left: 3rem;
 
   &__items {
     display: flex;
@@ -110,6 +113,8 @@ h1 {
 
   &__logo {
     padding-top: 1rem;
+    background-image: url(../../Assets/Icons/Group.png);
+    background-size: cover;
   }
 }
 
@@ -118,9 +123,9 @@ h1 {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
   line-height: 1rem;
-  letter-spacing: 1px;
+  font-weight: 400;
 
   &__title {
     padding-bottom: 1rem;
@@ -134,6 +139,23 @@ h1 {
     padding-right: 1rem;
     border-radius: 6px;
     margin-bottom: 3rem;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  &__reflect,
+  &__track,
+  &__journal {
+    width: 100%;
+  }
+
+  &__text:hover {
+    background: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(163, 175, 243, 1) 0%,
+      rgba(220, 182, 232, 1) 100.2%
+    );
   }
 
   &__container {
@@ -150,3 +172,34 @@ h1 {
   }
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  &__cta {
+    margin-bottom: 7rem;
+    background: transparent;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 0.5px solid white;
+    cursor: pointer;
+
+    color: #ffffff;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    border-top: 1px solid #7d85d6;
+    border-bottom: 0.5px solid #fcf7af;
+    outline: none;
+
+    transition: 0.5s;
+  }
+
+  &__cta:hover {
+    border: none;
+    box-shadow: 0 0 5px #f200ff, 0 0 10px #ff00f2, 0 0 30px #ee00ff,
+      0 0 60px #dd00ff, 0 0 120px #ff00d9;
+    color: rgb(206, 42, 214);
+  }
+}
