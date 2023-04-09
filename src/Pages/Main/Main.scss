@@ -37,7 +37,7 @@ a {
   &:before,
   &:after {
     content: "";
-    // position: absolute;
+    position: absolute;
   }
   &:before {
     mix-blend-mode: overlay;
@@ -113,8 +113,9 @@ h1 {
 
   &__logo {
     padding-top: 1rem;
-    background-image: url(../../Assets/Icons/Group.png);
-    background-size: cover;
+    // background-image: url(../../Assets/Icons/Group.png);
+    // background-size: cover;
+    // background-position: right;
   }
 }
 
@@ -150,13 +151,13 @@ h1 {
     width: 100%;
   }
 
-  &__text:hover {
-    background: radial-gradient(
-      circle farthest-corner at 10% 20%,
-      rgba(163, 175, 243, 1) 0%,
-      rgba(220, 182, 232, 1) 100.2%
-    );
-  }
+//   &__text:hover {
+//     background: radial-gradient(
+//       circle farthest-corner at 10% 20%,
+//       rgba(163, 175, 243, 1) 0%,
+//       rgba(220, 182, 232, 1) 100.2%
+//     );
+//   }
 
   &__container {
     display: flex;
@@ -201,5 +202,6 @@ h1 {
     box-shadow: 0 0 5px #f200ff, 0 0 10px #ff00f2, 0 0 30px #ee00ff,
       0 0 60px #dd00ff, 0 0 120px #ff00d9;
     color: rgb(206, 42, 214);
+
   }
 }

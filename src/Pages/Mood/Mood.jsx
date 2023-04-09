@@ -30,7 +30,7 @@ export const getMoodFromValue = (moodValue) => {
 };
 
 function Mood() {
-  const [comment, setComment] = useState("")
+  const [comment, setComment] = useState("");
   const navigate = useNavigate();
 
   const [moodValue, setMoodValue] = useState(0);
@@ -48,7 +48,7 @@ function Mood() {
   });
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(comment)
+    console.log(comment);
     axios
       .post(`${api}/mood`, {
         userId: "1234",
@@ -69,50 +69,56 @@ function Mood() {
   };
 
   return (
-    <div className="container">
-      <section className="mood">
-        <h2 className="mood__title">Choose your current mood</h2>
-        <div className="mood__container">
-          <CircularSlider
-            dataIndex={moodValue}
-            min={0}
-            max={100}
-            // trackColor="#eeeeee"
-            trackSize={2}
-            onChange={(value) => {
-              console.log(value);
-              setMoodValue(value);
-              setMood(getMoodFromValue(value));
-            }}
-            renderLabelValue={
-              <div className="mood__slider">
-                {mood}
-                {/* {moodValue} */}
-              </div>
-            }
-          />
-        </div>
-      </section>
+    <body>
+      <div className="container">
+        <section className="mood">
+          <h2 className="mood__title">Choose your current mood</h2>
+          <div className="mood__container">
+            <CircularSlider
+              dataIndex={moodValue}
+              min={0}
+              max={100}
+              progressColorFrom="darkred"
+              progressColorTo="light pink"
+              progressSize={4}
+              knobColor="black"
+              // trackColor="#eeeeee"
+              trackSize={2}
+              onChange={(value) => {
+                console.log(value);
+                setMoodValue(value);
+                setMood(getMoodFromValue(value));
+              }}
+              renderLabelValue={
+                <div className="mood__slider">
+                  {mood}
+                  {/* {moodValue} */}
+                </div>
+              }
+            />
+          </div>
+        </section>
 
-      <form
-        onSubmit={(event) => handleSubmit(event)}
-        id="form"
-        className="form"
-      >
-        <div className="form__box">
-          <input
-            type="text"
-            className="form__input"
-            placeholder="What's going on?"
-            value={comment}
-            onChange={(e)=> setComment(e.target.value)}
-          />
-        </div>
-        <div className="button">
-          <button>Done</button>
-        </div>
-      </form>
-    </div>
+        <form
+          onSubmit={(event) => handleSubmit(event)}
+          id="form"
+          className="form"
+        >
+          <div className="form__box">
+            <input
+              type="text"
+              className="form__input"
+              placeholder="What's going on?"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
+          </div>
+          <div className="button">
+            <button>Done</button>
+          </div>
+        </form>
+      </div>
+    </body>
   );
 }
 

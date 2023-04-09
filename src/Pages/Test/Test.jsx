@@ -12,6 +12,27 @@ function Test() {
   };
   
   return (
+    <>
+<div className="nav">
+          <div className="nav__logo">Clarity</div>
+
+          <div className="nav__container">
+            <ul className="nav__items">
+              <li className="nav__item">
+                <a className="nav__link" href="#">
+                  Home
+                </a>
+              </li>
+              <li className="nav__item">
+                <a className="nav__link" href="#">
+                  Login
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
     <section className="mood">
       {/* <div className="mood__container"> */}
     {/* <div className={animationClass}> */}
@@ -41,6 +62,7 @@ function Test() {
       {/* </div> */}
     {/* </div> */}
     </section>
+    </>
   );
 
 }

@@ -6,8 +6,16 @@ import clarity from "../../Assets/Icons/sunsets.png";
 import brain from "../../Assets/Icons/bulb.png";
 import check from "../../Assets/Icons/check.png";
 import journal from "../../Assets/Icons/creativity.png";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Main() {
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+    navigate('/register'); // Navigate to the register page
+  }
   return (
     <>
       {/* <Navbar />  */}
@@ -92,7 +100,7 @@ export default function Main() {
           </div>
         </div>
     <div className="button">
-        <button className="button__cta">I want to try!</button>
+        <button className="button__cta" onClick={handleSubmit}>I want to try!</button>
         </div>
       </section>
     </>

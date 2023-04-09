@@ -1,9 +1,53 @@
-.mood {
-  // background: linear-gradient(135deg, #f97794 10%, #623aa2 100%);
-  background-image: url(../../Assets/Clean/23.jpg);
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
+
+body {
+  background-image: url(../../Assets/JPGGradients/07.jpg);
   background-size: cover;
   height: 100vh;
 }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+
+  padding-right: 4rem;
+  color: white;
+  text-decoration: none;
+  //   border-bottom: rgb(248, 241, 241) 0.2px solid;
+  width: 95%;
+  margin-left: 3rem;
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-top: 1rem;
+  }
+
+  &__link {
+    color: white;
+  }
+
+  &__img {
+    width: 100px;
+  }
+
+  &__logo {
+    padding-top: 1rem;
+    // background-image: url(../../Assets/Icons/Group.png);
+    // background-size: cover;
+    // background-position: right;
+  }
+}
+
+// .mood {
+//   // background: linear-gradient(135deg, #f97794 10%, #623aa2 100%);
+ 
+
+// }
 
 .test {
   height: 100vh;
