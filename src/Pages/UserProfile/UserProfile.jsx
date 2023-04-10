@@ -21,7 +21,7 @@ import {
 import { getMoodFromValue } from "../Mood/Mood";
 
 ChartJS.register(
-  ChartDataLabels,
+  // ChartDataLabels,
   CategoryScale,
   LinearScale,
   PointElement,
@@ -30,6 +30,16 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+
+function moodToColor(value) {
+  if (value < 20) {
+    return "red";
+  } else if (value < 70) {
+    return "orange";
+  } else {
+    return "green";
+  }
+}
 
 export default function UserProfile() {
   const [moodData, setMoodData] = useState([]); //array of videos
@@ -49,29 +59,44 @@ export default function UserProfile() {
   }, []);
 
   const data = {
-    labels: moodData
-      .slice(-8)
-      .map((data) => new Date(data.date).toLocaleString("en-US", { month: "short", day: "2-digit" })),
+    labels: moodData.slice(-8).map((data) =>
+      new Date(data.date).toLocaleString("en-US", {
+        month: "short",
+        day: "2-digit",
+      })
+    ),
     datasets: [
       {
         label: "Mood",
         data: moodData.slice(-8).map((data) => data.value),
-        backgroundColor: "aqua",
+        // backgroundColor: "aqua",
+        backgroundColor: (set) => {
+          console.log("set: ", set);
+          return moodToColor(set.raw);
+        },
         borderColor: "black",
         pointBorderColor: "aqua",
+        pointRadius: 5,
         tension: 0,
-        datalabels: {
-          backgroundColor: () => "aqua",
-          borderRadius: 4,
-          color: "black",
-          font: {
-            weight: "bold",
-            color: "black",
-          },
-          formatter: (num) => {
-            return getMoodFromValue(num);
-          },
-        },
+        // datalabels: {
+        //   // backgroundColor: () => "aqua",
+        //   borderRadius: 4,
+        //   backgroundColor: (val) => {
+        //     const index = val.dataIndex;
+        //     const data = val.dataset.data;
+        //     const currentData = data[index];
+        //     // console.log("val:", val);
+        //     return moodToColor(currentData);
+        //   },
+        //   font: {
+        //     weight: "bold",
+        //     color: "black",
+        //   },
+        //   formatter: (num) => {
+        //     return "";
+        //     // return getMoodFromValue(num);
+        //   },
+        // },
       },
     ],
   };
@@ -88,9 +113,9 @@ export default function UserProfile() {
         callbacks: {
           label: (value) => {
             console.log("FORMATTED: ", value.formattedValue);
+            // return <BsSunFill />;
             return getMoodFromValue(value.formattedValue);
           },
-
         },
       },
     },
@@ -102,8 +127,8 @@ export default function UserProfile() {
         <div className="chart" id="myChart">
           <Line data={data} options={options} />
         </div>
-
         <div className="comments">
+          <BsSunFill />
           {moodData.slice(-3).map((data, index) => (
             <li key={index}>
               <div className="comments__header">

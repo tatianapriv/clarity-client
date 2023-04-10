@@ -37,7 +37,7 @@ a {
   &:before,
   &:after {
     content: "";
-    position: absolute;
+    // position: absolute;
   }
   &:before {
     mix-blend-mode: overlay;
@@ -143,12 +143,15 @@ h1 {
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.3rem;
+    height: 100%;
   }
 
   &__reflect,
   &__track,
   &__journal {
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
 //   &__text:hover {

@@ -10,34 +10,35 @@ function Test() {
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
-  
+
   return (
     <>
-<div className="nav">
-          <div className="nav__logo">Clarity</div>
+       
 
-          <div className="nav__container">
-            <ul className="nav__items">
-              <li className="nav__item">
-                <a className="nav__link" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav__item">
-                <a className="nav__link" href="#">
-                  Login
-                </a>
-              </li>
-            </ul>
-          </div>
+      <div className="nav">
+        <div className="nav__logo">Clarity</div>
+
+        <div className="nav__container">
+          <ul className="nav__items">
+            <li className="nav__item">
+              <a className="nav__link" href="#">
+                Home
+              </a>
+            </li>
+            <li className="nav__item">
+              <a className="nav__link" href="#">
+                Login
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
 
+      <section className="mood">
+        {/* <div className="mood__container"> */}
+        {/* <div className={animationClass}> */}
 
-    <section className="mood">
-      {/* <div className="mood__container"> */}
-    {/* <div className={animationClass}> */}
-   
-  {/* <ul className={`menu ${menuVisible ? "visible" : ""}`}>
+        {/* <ul className={`menu ${menuVisible ? "visible" : ""}`}>
     <li>
       <a href="#">Home</a>
     </li>
@@ -57,14 +58,13 @@ function Test() {
     <span></span>
   </div> */}
 
+        <Mood />
+        {/* </div> */}
+        {/* </div> */}
+      </section>
 
-      <Mood />
-      {/* </div> */}
-    {/* </div> */}
-    </section>
     </>
   );
-
 }
 
 export default Test;

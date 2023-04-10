@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "./Mood.scss";
 
 import axios from "axios";
+import { BsSunFill } from "react-icons/bs";
 
 export const api = process.env.REACT_APP_PORT;
 
@@ -69,56 +70,56 @@ function Mood() {
   };
 
   return (
-    <body>
-      <div className="container">
-        <section className="mood">
-          <h2 className="mood__title">Choose your current mood</h2>
-          <div className="mood__container">
-            <CircularSlider
-              dataIndex={moodValue}
-              min={0}
-              max={100}
-              progressColorFrom="darkred"
-              progressColorTo="light pink"
-              progressSize={4}
-              knobColor="black"
-              // trackColor="#eeeeee"
-              trackSize={2}
-              onChange={(value) => {
-                console.log(value);
-                setMoodValue(value);
-                setMood(getMoodFromValue(value));
-              }}
-              renderLabelValue={
-                <div className="mood__slider">
-                  {mood}
-                  {/* {moodValue} */}
-                </div>
-              }
-            />
-          </div>
-        </section>
+    <div className="container">
+      <section className="mood">
+        <h2 className="mood__title">Choose your current mood</h2>
+        <div className="mood__container">
+          <CircularSlider
+            dataIndex={moodValue}
+            min={0}
+            max={100}
+            progressColorFrom="darkred"
+            progressColorTo="light pink"
+            progressSize={4}
+            knobColor="black"
+            // trackColor="#eeeeee"
+            trackSize={2}
+            onChange={(value) => {
+              console.log(value);
+              setMoodValue(value);
+              setMood(getMoodFromValue(value));
+            }}
+            renderLabelValue={
+              <div className="mood__slider">
+                {mood}
+                {/* {moodValue} */}
+              </div>
+            }
+          />
+        </div>
+      </section>
 
-        <form
-          onSubmit={(event) => handleSubmit(event)}
-          id="form"
-          className="form"
-        >
-          <div className="form__box">
-            <input
-              type="text"
-              className="form__input"
-              placeholder="What's going on?"
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-            />
-          </div>
-          <div className="button">
-            <button className="button__cta"><span>Done</span></button>
-          </div>
-        </form>
-      </div>
-    </body>
+      <form
+        onSubmit={(event) => handleSubmit(event)}
+        id="form"
+        className="form"
+      >
+        <div className="form__box">
+          <input
+            type="text"
+            className="form__input"
+            placeholder="What's going on?"
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+          />
+        </div>
+        <div className="button">
+          <button className="button__cta">
+            <span>Done</span>
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 
