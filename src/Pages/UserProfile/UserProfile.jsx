@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { api } from "../Mood/Mood";
 // import gradient from "../../Assets/20.png";
+import { BsSunFill } from "react-icons/bs";
 
 import {
   Chart as ChartJS,
@@ -50,7 +51,7 @@ export default function UserProfile() {
   const data = {
     labels: moodData
       .slice(-8)
-      .map((data) => new Date(data.date).toLocaleString()),
+      .map((data) => new Date(data.date).toLocaleString("en-US", { month: "short", day: "2-digit" })),
     datasets: [
       {
         label: "Mood",
@@ -67,9 +68,9 @@ export default function UserProfile() {
             weight: "bold",
             color: "black",
           },
-          // formatter: (num) => {
-          //   return getMoodFromValue(num);
-          // },
+          formatter: (num) => {
+            return getMoodFromValue(num);
+          },
         },
       },
     ],
@@ -89,6 +90,7 @@ export default function UserProfile() {
             console.log("FORMATTED: ", value.formattedValue);
             return getMoodFromValue(value.formattedValue);
           },
+
         },
       },
     },

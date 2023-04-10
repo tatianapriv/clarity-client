@@ -114,7 +114,7 @@ function Mood() {
             />
           </div>
           <div className="button">
-            <button>Done</button>
+            <button className="button__cta"><span>Done</span></button>
           </div>
         </form>
       </div>
