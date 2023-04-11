@@ -9,7 +9,6 @@ import { api } from "../Mood/Mood";
 // import { BsSunFill } from "react-icons/bs";
 // import { renderToString } from "react-dom/server";
 
-
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -49,16 +48,16 @@ function moodToIcon(value) {
   } else if (value <= 30) {
     return getFontAwesomeIconContent("f73d");
   } else if (value <= 50) {
-  return getFontAwesomeIconContent("f0c2");
-} else if (value <= 60) {
-  return getFontAwesomeIconContent("f6c4");
-} else if (value <= 75) {
+    return getFontAwesomeIconContent("f0c2");
+  } else if (value <= 60) {
+    return getFontAwesomeIconContent("f6c4");
+  } else if (value <= 75) {
     return getFontAwesomeIconContent("f185");
-} else if (value <= 90) {
- return getFontAwesomeIconContent("f005");
-} else {
-return getFontAwesomeIconContent("f004");
-};
+  } else if (value <= 90) {
+    return getFontAwesomeIconContent("f005");
+  } else {
+    return getFontAwesomeIconContent("f004");
+  }
 }
 
 function getFontAwesomeIconContent(unicode) {
@@ -66,7 +65,7 @@ function getFontAwesomeIconContent(unicode) {
 }
 
 export default function UserProfile() {
-  const [moodData, setMoodData] = useState([]); 
+  const [moodData, setMoodData] = useState([]);
   const [chartKey, setchartKey] = useState(0);
 
   function getMoodData() {
@@ -97,33 +96,25 @@ export default function UserProfile() {
     datasets: [
       {
         label: "Mood",
+
         data: moodData.slice(-8).map((data) => data.value),
         // backgroundColor: "aqua",
-        backgroundColor: (set) => {
-          // console.log("set: ", set);
-          return moodToColor(set.raw);
-        },
+        backgroundColor: "rgba(0, 0, 0, 0)",
         borderColor: "#bf40bf",
-        pointBorderColor: "aqua",
-        pointRadius: 0, //to see point behind the chart icons
+        pointBorderColor: "rgba(0, 0, 0, 0)",
+        pointRadius: 5, //to see point behind the chart icons
         tension: 0,
+
         borderWidth: 1,
         datalabels: {
           // backgroundColor: () => "aqua",
           borderRadius: 4,
-          
-          // backgroundColor: (val) => {
-          //   const index = val.dataIndex;
-          //   const data = val.dataset.data;
-          //   const currentData = data[index];
-          //   // console.log("val:", val);
-          //   return moodToColor(currentData);
-          // },
           font: {
             family: '"Font Awesome 5 Free"',
             weight: "900",
             color: "black",
-            size: 20,
+            size: 18,
+
             // padding: 0,
           },
           color: "white",
@@ -136,16 +127,33 @@ export default function UserProfile() {
     ],
   };
 
-
   const options = {
     scales: {
       y: {
         ticks: {
-          callback: function(value) {
-            return getMoodFromValue(value);
+          // autoSkip: true,
+          maxTicksLimit: 8,
+          color: "white",
+          callback: function (value) {
+            // console.log("index", index);
+            // console.log("value", value);
+            // console.log("getmpppp", getMoodFromValue(value));
+            // console.log("------------");
+            // const allowedIndex = [10, 9, 7, 6, 5, 2, 0]
+            // if( allowedIndex.includes(index) ){
+              return getMoodFromValue(value)
+            // }
+          
             
-        }
+            // return "";
+            // return index % 2 === 0 ? getMoodFromValue(value) : "";
+          },
           // display: false, // This will remove the y-axis tick labels
+        },
+      },
+      x: {
+        ticks: {
+          color: "white",
         },
       },
     },
@@ -177,6 +185,24 @@ export default function UserProfile() {
   // console.log("chartke: , ", chartKey);
   return (
     <>
+      <div className="nav">
+        <div className="nav__logo">Clarity</div>
+
+        <div className="nav__container">
+          <ul className="nav__items">
+            <li className="nav__item">
+              <a className="nav__link" href="#">
+                Home
+              </a>
+            </li>
+            <li className="nav__item">
+              <a className="nav__link" href="#">
+                Login
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <section className="userProfile">
         <div
           className={`chart ${chartKey >= 1 ? "" : "chart--hide"}`}
@@ -196,6 +222,12 @@ export default function UserProfile() {
               <p className="comments__content">{data.comment}</p>
             </li>
           ))}
+        </div>
+
+        <div className="button">
+          <button className="button__cta">
+            <span>Back</span>
+          </button>
         </div>
       </section>
     </>

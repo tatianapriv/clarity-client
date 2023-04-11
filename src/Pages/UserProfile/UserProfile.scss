@@ -4,13 +4,47 @@
 //   // background: linear-gradient(to bottom, #222f3e, #66bbbb);
 
 // }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+
+  padding-right: 4rem;
+  color: white;
+  text-decoration: none;
+  //   border-bottom: rgb(248, 241, 241) 0.2px solid;
+  width: 95%;
+  margin-left: 3rem;
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-top: 1rem;
+  }
+
+  &__link {
+    color: white;
+  }
+
+  &__img {
+    width: 100px;
+  }
+
+  &__logo {
+    padding-top: 1rem;
+    // background-image: url(../../Assets/Icons/Group.png);
+    // background-size: cover;
+    // background-position: right;
+  }
+}
 
 .font-icon {
   font-family: "Font Awesome 5 Free";
 }
 
 .userProfile {
-    height: 100%;
+  height: 100%;
   //   width: 100%;
   //   // background: linear-gradient(to bottom, #222f3e, #66bbbb);
   //   background-image: url(../../Assets/JPGGradients/37.jpg);
@@ -21,30 +55,33 @@
   background-image: url(../../Assets/JPGGradients/03.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 #myChart {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .chart {
- padding: 2rem;
-
+  padding: 2rem;
   width: 80%;
-
   border: 1px #00aced solid;
-
+//   margin-bottom: 1rem;
   &--hide {
     visibility: hidden;
   }
 }
 
 .comments {
-  color: black;
+  color: white;
   border: 1px solid #ddd;
-
+  width: 80%;
   padding: 2rem;
+  margin: 0 auto;
 
   &__header {
     display: flex;
