@@ -44,13 +44,21 @@ function moodToColor(value) {
 }
 //icons
 function moodToIcon(value) {
-  if (value < 20) {
+  if (value < 15) {
     return getFontAwesomeIconContent("f76c");
-  } else if (value < 70) {
-    return "orange";
-  } else {
+  } else if (value <= 30) {
+    return getFontAwesomeIconContent("f73d");
+  } else if (value <= 50) {
+  return getFontAwesomeIconContent("f0c2");
+} else if (value <= 60) {
+  return getFontAwesomeIconContent("f6c4");
+} else if (value <= 75) {
     return getFontAwesomeIconContent("f185");
-  }
+} else if (value <= 90) {
+ return getFontAwesomeIconContent("f005");
+} else {
+return getFontAwesomeIconContent("f004");
+};
 }
 
 function getFontAwesomeIconContent(unicode) {
@@ -58,7 +66,7 @@ function getFontAwesomeIconContent(unicode) {
 }
 
 export default function UserProfile() {
-  const [moodData, setMoodData] = useState([]); //array of videos
+  const [moodData, setMoodData] = useState([]); 
   const [chartKey, setchartKey] = useState(0);
 
   function getMoodData() {
@@ -127,11 +135,17 @@ export default function UserProfile() {
       },
     ],
   };
+
+
   const options = {
     scales: {
       y: {
         ticks: {
-          display: false, // This will remove the y-axis tick labels
+          callback: function(value) {
+            return getMoodFromValue(value);
+            
+        }
+          // display: false, // This will remove the y-axis tick labels
         },
       },
     },
