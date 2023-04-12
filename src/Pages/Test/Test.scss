@@ -1,10 +1,11 @@
-
-
-
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap");
+
 body {
-  background-image: url(../../Assets/JPGGradients/07.jpg);
+  // background-image: url(../../Assets/JPGGradients/07.jpg);
   background-size: cover;
   height: 100%;
   background-repeat: no-repeat;
@@ -12,41 +13,68 @@ body {
 .nav {
   display: flex;
   justify-content: space-between;
-  padding-top: 2rem;
-
-  padding-right: 4rem;
   color: white;
   text-decoration: none;
-  //   border-bottom: rgb(248, 241, 241) 0.2px solid;
   width: 95%;
-  margin-left: 3rem;
+  // mask-image: linear-gradient(
+  //   90deg,
+  //   rgba(255, 255, 255, 0) 0%,
+  //   #ffffff 25%,
+  //   #ffffff 75%,
+  //   rgba(255, 255, 255, 0) 100%
+  // );
+  margin: 0 auto;
+  padding: 1rem;
+  // border-bottom: 0.5px white solid;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.5px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      #ffffff 25%,
+      #ffffff 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
 
   &__items {
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    padding-top: 1rem;
+    font-size: 1rem;
   }
-
   &__link {
     color: white;
   }
-
-  &__img {
-    width: 100px;
+  &__link:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
   }
 
+  // &__img {
+
+  // }
+
   &__logo {
-    padding-top: 1rem;
-    // background-image: url(../../Assets/Icons/Group.png);
+    font-size: 2.5rem;
+
+    font-family: "Nothing You Could Do", cursive;
+    margin-left: 1rem;
+    // background-image: url(../../Assets/8.jpg);
     // background-size: cover;
-    // background-position: right;
   }
 }
 
 // .mood {
 //   // background: linear-gradient(135deg, #f97794 10%, #623aa2 100%);
- 
 
 // }
 
@@ -101,81 +129,81 @@ body {
   }
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: transparent;
-  height: 1rem;
-}
+// nav {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding: 20px;
+//   background: transparent;
+//   height: 1rem;
+// }
 
-.logo {
-  width: 50px;
-}
+// .logo {
+//   width: 50px;
+// }
 
-.logo img {
-  display: block;
-  width: 100%;
-}
+// .logo img {
+//   display: block;
+//   width: 100%;
+// }
 
-.menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+// .menu {
+//   display: flex;
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
 
-  transition: all 0.3s ease;
-  transform: translateX(-100%);
-  opacity: 0;
-}
+//   transition: all 0.3s ease;
+//   transform: translateX(-100%);
+//   opacity: 0;
+// }
 
-.menu li {
-  margin-left: 20px;
-}
+// .menu li {
+//   margin-left: 20px;
+// }
 
-.menu li:first-child {
-  margin-left: 0;
-}
+// .menu li:first-child {
+//   margin-left: 0;
+// }
 
-.menu li a {
-  display: block;
-  padding: 10px;
-  color: #333;
-  text-decoration: none;
-}
+// .menu li a {
+//   display: block;
+//   padding: 10px;
+//   color: #333;
+//   text-decoration: none;
+// }
 
-.hamburger-menu {
-  display: none;
-  cursor: pointer;
-}
+// .hamburger-menu {
+//   display: none;
+//   cursor: pointer;
+// }
 
-.hamburger-menu span {
-  display: block;
-  width: 30px;
-  height: 1.5px;
-  margin-bottom: 5px;
-  background-color: white;
-}
+// .hamburger-menu span {
+//   display: block;
+//   width: 30px;
+//   height: 1.5px;
+//   margin-bottom: 5px;
+//   background-color: white;
+// }
 
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-  }
-  .hamburger-menu {
-    display: block;
-  }
-}
+// @media (max-width: 768px) {
+//   .menu {
+//     display: none;
+//   }
+//   .hamburger-menu {
+//     display: block;
+//   }
+// }
 
-.menu.visible {
-  display: block;
-  position: absolute;
-  top: 70px;
-  right: 0;
-  width: 200px;
-  background-color: white;
-  padding: 20px;
-  border: 1px solid gray;
-  transform: translateX(0);
-  opacity: 1;
-}
+// .menu.visible {
+//   display: block;
+//   position: absolute;
+//   top: 70px;
+//   right: 0;
+//   width: 200px;
+//   background-color: white;
+//   padding: 20px;
+//   border: 1px solid gray;
+//   transform: translateX(0);
+//   opacity: 1;
+// }

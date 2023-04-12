@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Test.scss";
-import eye from "../../Assets/eye.svg";
+
 import Mood from "../Mood/Mood.jsx";
 // import OtherNavbar from "../../Components/OtherNavbar/OtherNavbar";
 
@@ -13,8 +13,7 @@ function Test() {
 
   return (
     <>
-       
-
+ 
       <div className="nav">
         <div className="nav__logo">Clarity</div>
 

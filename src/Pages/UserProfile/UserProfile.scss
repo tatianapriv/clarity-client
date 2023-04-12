@@ -1,13 +1,9 @@
-// body {
-//   //   height: 100vh;
-//   width: 100%;
-//   // background: linear-gradient(to bottom, #222f3e, #66bbbb);
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
 
-// }
 .nav {
   display: flex;
   justify-content: space-between;
-  padding-top: 2rem;
+ 
 
   padding-right: 4rem;
   color: white;
@@ -15,6 +11,7 @@
   //   border-bottom: rgb(248, 241, 241) 0.2px solid;
   width: 95%;
   margin-left: 3rem;
+
 
   &__items {
     display: flex;
@@ -44,15 +41,11 @@
 }
 
 .userProfile {
-  height: 100%;
-  //   width: 100%;
-  //   // background: linear-gradient(to bottom, #222f3e, #66bbbb);
-  //   background-image: url(../../Assets/JPGGradients/37.jpg);
-  //   background-size: cover;
-  font-family: "Signore - Serif Typeface";
+
+font-family: "Quicksand", sans-serif;
   font-weight: normal;
   font-style: normal;
-  background-image: url(../../Assets/JPGGradients/03.jpg);
+//   background-image: url(../../Assets/JPGGradients/03.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -70,7 +63,7 @@
   padding: 2rem;
   width: 80%;
   border: 1px #00aced solid;
-//   margin-bottom: 1rem;
+  //   margin-bottom: 1rem;
   &--hide {
     visibility: hidden;
   }
@@ -100,5 +93,52 @@
   &__content {
     margin: 0;
     line-height: 1.5;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__cta {
+    position: relative;
+    color: #00aced;
+    border: none;
+    z-index: 2;
+    width: 15%;
+  }
+  &__cta:before,
+  &__cta:after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    border: 1px solid;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+  &__cta:before {
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #00aced;
+    border-left-color: #00aced;
+  }
+  &__cta:after {
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: #00aced;
+    border-right-color: #00aced;
+  }
+  &__cta:hover:before,
+  &__cta:hover:after {
+    border-color: #00aced;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 5px #00aced, 0 0 5px #00aced inset;
   }
 }

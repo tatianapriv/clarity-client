@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "./Mood.scss";
 
 import axios from "axios";
-import { BsSunFill } from "react-icons/bs";
+
 
 export const api = process.env.REACT_APP_PORT;
 
@@ -82,17 +82,17 @@ function Mood() {
             progressColorTo="light pink"
             progressSize={4}
             knobColor="black"
-            // trackColor="#eeeeee"
+           
             trackSize={2}
             onChange={(value) => {
-              console.log(value);
+              // console.log(value);
               setMoodValue(value);
               setMood(getMoodFromValue(value));
             }}
             renderLabelValue={
               <div className="mood__slider">
                 {mood}
-                {/* {moodValue} */}
+           
               </div>
             }
           />
@@ -105,7 +105,7 @@ function Mood() {
         className="form"
       >
         <div className="form__box">
-          <input
+          <textarea
             type="text"
             className="form__input"
             placeholder="What's going on?"

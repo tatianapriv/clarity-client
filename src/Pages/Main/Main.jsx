@@ -100,7 +100,8 @@ export default function Main() {
           </div>
         </div>
     <div className="button">
-        <button className="button__cta" onClick={handleSubmit}>I want to try!</button>
+        <button className="button__cta" onClick={handleSubmit}>
+          I want to try!</button>
         </div>
       </section>
     </>

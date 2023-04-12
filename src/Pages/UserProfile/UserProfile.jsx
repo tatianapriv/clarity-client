@@ -211,7 +211,7 @@ export default function UserProfile() {
           <Line key={chartKey} data={data} options={options} />
         </div>
         <div className="comments">
-          {moodData.slice(-3).map((data, index) => (
+          {moodData.slice(-7).map((data, index) => (
             <li key={index}>
               <div className="comments__header">
                 {/* <h4 className="comments__username">{data.user_name}</h4> */}
