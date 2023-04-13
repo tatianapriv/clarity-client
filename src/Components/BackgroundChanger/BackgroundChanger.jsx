@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 const pathToImages = {
     "/": "../11.jpg",
     "/user": "../03.jpg",
-    "/test": "../07.jpg",
+    "/tracker": "../07.jpg",
     "/register": "../22.jpg",
     "/login": "../22.jpg"
 };

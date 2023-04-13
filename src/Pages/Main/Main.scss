@@ -4,12 +4,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
 a {
   text-decoration: none;
-    color: white;
-    
+  color: white;
 }
 
 * {
@@ -17,63 +16,34 @@ a {
 }
 
 .content {
-
   align-items: center;
   display: flex;
   justify-content: center;
   margin: 0;
   color: white;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1.4rem;
   display: flex;
   flex-direction: column;
   z-index: 1;
-
-  //   text-align: justify;
   font-size: 1rem;
   margin-left: 5rem;
   margin-right: 5rem;
   background-size: cover;
   background-position: center;
-  //   &:before,
-  //   &:after {
-  //     content: "";
-  //     // position: absolute;
-  //   }
-  //   &:before {
-  //     mix-blend-mode: overlay;
-  //     top: 2%;
-  //     right: 2%;
-  //     bottom: 2%;
-  //     left: 2%;
-  //     border: 1px solid #efefef;
-  //     z-index: 2;
-  //   }
-  //   &:after {
-  //     top: 0;
-  //     left: 0;
-  //     height: 100%;
-  //     width: 100%;
-  //     opacity: 0.6;
-  //   }
 }
 
 p {
   padding: 1em 0;
-
   border-bottom: 0.5px rgb(241, 233, 213) solid;
   border-top: 0.5px rgb(252, 196, 243) solid;
   //  backdrop-filter: blur(5px);
   margin-bottom: 3rem;
 }
 
-
-
 h1 {
-  //   font-family: Oswald;
-
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
@@ -89,7 +59,7 @@ h1 {
 .main {
   width: 100%;
 
-//   background-image: url(../../Assets/JPGGradients/11.jpg);
+  //   background-image: url(../../Assets/JPGGradients/11.jpg);
   background-size: cover;
 }
 
@@ -97,7 +67,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   padding-top: 2rem;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   align-items: flex-end;
   padding-right: 4rem;
   color: white;
@@ -111,10 +81,7 @@ h1 {
     flex-direction: row;
     gap: 2rem;
     padding-top: 1rem;
-    
   }
-
-
 
   &__link {
     color: white;
@@ -170,14 +137,6 @@ h1 {
     flex-direction: column;
   }
 
-  //   &__text:hover {
-  //     background: radial-gradient(
-  //       circle farthest-corner at 10% 20%,
-  //       rgba(163, 175, 243, 1) 0%,
-  //       rgba(220, 182, 232, 1) 100.2%
-  //     );
-  //   }
-
   &__container {
     display: flex;
     align-items: center;
@@ -222,4 +181,3 @@ h1 {
     color: rgb(206, 42, 214);
   }
 }
-

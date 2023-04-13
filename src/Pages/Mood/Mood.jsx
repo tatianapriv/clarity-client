@@ -7,7 +7,6 @@ import "./Mood.scss";
 
 import axios from "axios";
 
-
 export const api = process.env.REACT_APP_PORT;
 
 export const getMoodFromValue = (moodValue) => {
@@ -82,19 +81,12 @@ function Mood() {
             progressColorTo="light pink"
             progressSize={4}
             knobColor="black"
-           
             trackSize={2}
             onChange={(value) => {
-              // console.log(value);
               setMoodValue(value);
               setMood(getMoodFromValue(value));
             }}
-            renderLabelValue={
-              <div className="mood__slider">
-                {mood}
-           
-              </div>
-            }
+            renderLabelValue={<div className="mood__slider">{mood}</div>}
           />
         </div>
       </section>

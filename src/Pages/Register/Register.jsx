@@ -1,13 +1,12 @@
 import "./Register.scss";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 export default function Register() {
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-    navigate("/test"); // Navigate to the main page
+    event.preventDefault();
+    navigate("/tracker");
   };
   return (
     <div className="register">

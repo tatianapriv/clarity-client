@@ -1,28 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Main.scss";
-// import Header from "../../Components/Header/Header";
 import clarity from "../../Assets/Icons/sunsets.png";
 import brain from "../../Assets/Icons/bulb.png";
 import check from "../../Assets/Icons/check.png";
 import journal from "../../Assets/Icons/creativity.png";
 import { useNavigate } from "react-router-dom";
 
-
 export default function Main() {
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-    navigate('/register'); // Navigate to the register page
-  }
+    event.preventDefault();
+    navigate("/register");
+  };
   return (
     <>
-      {/* <Navbar />  */}
-
       <section className="main">
         <div className="nav">
-        <div className="nav__logo">
+          <div className="nav__logo">
             <Link to="/">Clarity</Link>
           </div>
 
@@ -49,7 +45,7 @@ export default function Main() {
             seem distant and difficult to understand. But just as astronomers
             study the movements of celestial bodies to unlock the secrets of the
             universe, Clarity helps you track and reflect on your moods and
-            emotions to gain a deeper understanding of yourself. 
+            emotions to gain a deeper understanding of yourself.
           </p>
 
           <div className="bubbles">
@@ -76,8 +72,8 @@ export default function Main() {
                 />
               </div>
               <p className="bubbles__text">
-                Log your mood and see it displayed in a chart, notice how
-                much your mood changes overtime.
+                Log your mood and see it displayed in a chart, notice how much
+                your mood changes overtime.
               </p>
             </div>
             <div className="bubbles__journal">
@@ -97,9 +93,10 @@ export default function Main() {
             </div>
           </div>
         </div>
-    <div className="button">
-        <button className="button__cta" onClick={handleSubmit}>
-          I want to try!</button>
+        <div className="button">
+          <button className="button__cta" onClick={handleSubmit}>
+            I want to try!
+          </button>
         </div>
       </section>
     </>

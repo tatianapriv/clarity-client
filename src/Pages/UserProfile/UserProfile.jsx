@@ -7,9 +7,6 @@ import axios from "axios";
 import { api } from "../Mood/Mood";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-// import gradient from "../../Assets/20.png";
-// import { BsSunFill } from "react-icons/bs";
-// import { renderToString } from "react-dom/server";
 
 import {
   Chart as ChartJS,
@@ -71,9 +68,9 @@ export default function UserProfile() {
   const [chartKey, setchartKey] = useState(0);
   const navigate = useNavigate();
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-    navigate('/test'); // Navigate to the register page
-  }
+    event.preventDefault();
+    navigate("/tracker");
+  };
   function getMoodData() {
     axios
       .get(`${api}/mood`)
@@ -104,7 +101,6 @@ export default function UserProfile() {
         label: "Mood",
 
         data: moodData.slice(-8).map((data) => data.value),
-        // backgroundColor: "aqua",
         backgroundColor: "rgba(0, 0, 0, 0)",
         borderColor: "#bf40bf",
         pointBorderColor: "rgba(0, 0, 0, 0)",
@@ -113,15 +109,12 @@ export default function UserProfile() {
 
         borderWidth: 1,
         datalabels: {
-          // backgroundColor: () => "aqua",
           borderRadius: 4,
           font: {
             family: '"Font Awesome 5 Free"',
             weight: "900",
             color: "black",
             size: 18,
-
-            // padding: 0,
           },
           color: "white",
 
@@ -137,22 +130,10 @@ export default function UserProfile() {
     scales: {
       y: {
         ticks: {
-          // autoSkip: true,
           maxTicksLimit: 8,
           color: "white",
           callback: function (value) {
-            // console.log("index", index);
-            // console.log("value", value);
-            // console.log("getmpppp", getMoodFromValue(value));
-            // console.log("------------");
-            // const allowedIndex = [10, 9, 7, 6, 5, 2, 0]
-            // if( allowedIndex.includes(index) ){
-              return getMoodFromValue(value)
-            // }
-          
-            
-            // return "";
-            // return index % 2 === 0 ? getMoodFromValue(value) : "";
+            return getMoodFromValue(value);
           },
           // display: false, // This will remove the y-axis tick labels
         },
@@ -192,20 +173,20 @@ export default function UserProfile() {
     <>
       <div className="nav">
         <div className="nav__logo">
-            <Link to="/">Clarity</Link>
-          </div>
-
-          <div className="nav__container">
-            <ul className="nav__items">
-              <li className="nav__item">
-                <Link to="/">Home</Link>
-              </li>
-              <li className="nav__item">
-                <Link to="/login">Login</Link>
-              </li>
-            </ul>
-          </div>
+          <Link to="/">Clarity</Link>
         </div>
+
+        <div className="nav__container">
+          <ul className="nav__items">
+            <li className="nav__item">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
       <section className="userProfile">
         <div
           className={`chart ${chartKey >= 1 ? "" : "chart--hide"}`}
@@ -217,7 +198,6 @@ export default function UserProfile() {
           {moodData.slice(-7).map((data, index) => (
             <li key={index}>
               <div className="comments__header">
-                {/* <h4 className="comments__username">{data.user_name}</h4> */}
                 <span className="comments__timestamp">
                   {new Date(data.date).toLocaleString()}
                 </span>
