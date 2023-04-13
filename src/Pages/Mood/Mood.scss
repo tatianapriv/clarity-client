@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@200;300;400&display=swap");
 
 // body {
 //   background-image: url(../../Assets/JPGGradients/07.jpg);
@@ -45,9 +45,12 @@
     justify-content: center;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    color: white;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 400;
+    // color: #36073b;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 200;
+    background-image: linear-gradient(to right, #f5eef4, #2e2ee9);
+    -webkit-background-clip: text;
+    color: transparent;
   }
 }
 
@@ -72,7 +75,7 @@
     outline: none;
     font-size: 16px;
     width: 100%;
-    font-family: "Quicksand", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     background-color: #030f1a;
     border: 1px solid #00aced;
     box-shadow: 0 0 0 1px #1B5881;
@@ -87,6 +90,7 @@
 
 ::placeholder {
   padding: 0.5rem;
+ 
 }
 
 .button {

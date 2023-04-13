@@ -1,12 +1,13 @@
 import "./Register.scss";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
-    navigate('/'); // Navigate to the main page
+    navigate("/test"); // Navigate to the main page
   };
   return (
     <div className="register">
@@ -30,8 +31,11 @@ export default function Register() {
           className="register__input"
           placeholder="Enter your password"
         ></input>
-        <button className="register__buttonRegister">Register</button>
-        {/* <button className="register__buttonLogin">Login</button> */}
+        <div className="button">
+          <button className="button__cta button__cta--register">
+            <span>Register</span>
+          </button>
+        </div>
       </form>
     </div>
   );

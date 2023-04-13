@@ -6,7 +6,7 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
-    navigate('/'); // Navigate to the main page
+    navigate('/test'); // Navigate to the main page
   };
 
   return (
@@ -17,8 +17,12 @@ export default function Login() {
         <input type="text" className="login__input" placeholder="Enter your username"></input>
         <label className="login__label">Password</label>
         <input type="password" className="login__input" placeholder="Enter your password"></input>
-        <button className="login__buttonLogin">Login</button>
-        {/* <button className="login__buttonRegister">Register</button> */}
+        <div className="button">
+          <button className="button__cta button__cta--login">
+            <span>Login</span>
+          </button>
+        </div>
+        
       </form>
     </div>
   );

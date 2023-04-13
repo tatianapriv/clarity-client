@@ -38,11 +38,11 @@
 }
 
 .userProfile {
-padding-top: 2rem;
-font-family: "Quicksand", sans-serif;
+  padding-top: 2rem;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: normal;
   font-style: normal;
-//   background-image: url(../../Assets/JPGGradients/03.jpg);
+  //   background-image: url(../../Assets/JPGGradients/03.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -84,11 +84,12 @@ font-family: "Quicksand", sans-serif;
   }
 
   &__timestamp {
-    margin-left: auto;
+    color: #00aced;
+    margin-left: 37rem;
   }
 
   &__content {
-    margin: 0;
+    margin: 1rem;
     line-height: 1.5;
   }
 }
