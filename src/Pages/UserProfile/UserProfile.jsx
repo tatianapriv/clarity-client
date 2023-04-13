@@ -5,6 +5,8 @@ import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { api } from "../Mood/Mood";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import gradient from "../../Assets/20.png";
 // import { BsSunFill } from "react-icons/bs";
 // import { renderToString } from "react-dom/server";
@@ -67,7 +69,11 @@ function getFontAwesomeIconContent(unicode) {
 export default function UserProfile() {
   const [moodData, setMoodData] = useState([]);
   const [chartKey, setchartKey] = useState(0);
-
+  const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+    navigate('/test'); // Navigate to the register page
+  }
   function getMoodData() {
     axios
       .get(`${api}/mood`)
@@ -182,27 +188,24 @@ export default function UserProfile() {
     },
   };
 
-  // console.log("chartke: , ", chartKey);
   return (
     <>
       <div className="nav">
-        <div className="nav__logo">Clarity</div>
+        <div className="nav__logo">
+            <Link to="/">Clarity</Link>
+          </div>
 
-        <div className="nav__container">
-          <ul className="nav__items">
-            <li className="nav__item">
-              <a className="nav__link" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav__item">
-              <a className="nav__link" href="#">
-                Login
-              </a>
-            </li>
-          </ul>
+          <div className="nav__container">
+            <ul className="nav__items">
+              <li className="nav__item">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="nav__item">
+                <Link to="/login">Login</Link>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
       <section className="userProfile">
         <div
           className={`chart ${chartKey >= 1 ? "" : "chart--hide"}`}
@@ -225,7 +228,7 @@ export default function UserProfile() {
         </div>
 
         <div className="button">
-          <button className="button__cta">
+          <button className="button__cta" onClick={handleSubmit}>
             <span>Back</span>
           </button>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-// import Navbar from "../../Components/Navbar/Navbar";
+import { Link } from "react-router-dom";
 import "./Main.scss";
 // import Header from "../../Components/Header/Header";
 import clarity from "../../Assets/Icons/sunsets.png";
@@ -22,19 +22,17 @@ export default function Main() {
 
       <section className="main">
         <div className="nav">
-          <div className="nav__logo">Clarity</div>
+        <div className="nav__logo">
+            <Link to="/">Clarity</Link>
+          </div>
 
           <div className="nav__container">
             <ul className="nav__items">
               <li className="nav__item">
-                <a className="nav__link" href="#">
-                  Home
-                </a>
+                <Link to="/">Home</Link>
               </li>
               <li className="nav__item">
-                <a className="nav__link" href="#">
-                  Login
-                </a>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
           </div>
@@ -93,7 +91,7 @@ export default function Main() {
               </div>
               <p className="bubbles__text">
                 What happened today that made you feel this way? Write about
-                your experiences to get better understanding of what exactly
+                your experiences to get a better understanding of what exactly
                 affects your wellbeing.{" "}
               </p>
             </div>

@@ -6,6 +6,7 @@
 
 a {
   text-decoration: none;
+    color: white;
 }
 
 * {
@@ -76,6 +77,9 @@ h1 {
   text-transform: uppercase;
   text-align: center;
   padding-bottom: 2rem;
+  background-image: linear-gradient(to right, #f7a2eb, #333399);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .main {
@@ -104,12 +108,20 @@ h1 {
     padding-top: 1rem;
   }
 
+  &__items:hover {
+
+        // background-image: linear-gradient(to bottom, #ffffff, #cccccc);
+      }
+  
+
   &__link {
     color: white;
   }
 
   &__img {
+    padding-top: 1.5rem;
     width: 100px;
+    filter: contrast(200%);
   }
 
   &__logo {
@@ -168,7 +180,7 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-direction: column-reverse;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   &__picture {
@@ -207,3 +219,4 @@ h1 {
     color: rgb(206, 42, 214);
   }
 }
+

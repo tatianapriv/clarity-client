@@ -1,37 +1,32 @@
 import React, { useState } from "react";
 import "./Test.scss";
+import { Link } from "react-router-dom";
 
 import Mood from "../Mood/Mood.jsx";
 // import OtherNavbar from "../../Components/OtherNavbar/OtherNavbar";
 
 function Test() {
-  const [animationClass, setAnimationClass] = useState("test");
-  const [menuVisible, setMenuVisible] = useState(false);
-  const toggleMenu = () => {
-    setMenuVisible(!menuVisible);
-  };
+
 
   return (
     <>
  
-      <div className="nav">
-        <div className="nav__logo">Clarity</div>
+ <div className="nav">
+        <div className="nav__logo">
+            <Link to="/">Clarity</Link>
+          </div>
 
-        <div className="nav__container">
-          <ul className="nav__items">
-            <li className="nav__item">
-              <a className="nav__link" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav__item">
-              <a className="nav__link" href="#">
-                Login
-              </a>
-            </li>
-          </ul>
+          <div className="nav__container">
+            <ul className="nav__items">
+              <li className="nav__item">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="nav__item">
+                <Link to="/login">Login</Link>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
 
       <section className="mood">
         {/* <div className="mood__container"> */}

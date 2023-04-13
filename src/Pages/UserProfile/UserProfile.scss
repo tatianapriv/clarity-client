@@ -3,15 +3,12 @@
 .nav {
   display: flex;
   justify-content: space-between;
- 
-
   padding-right: 4rem;
   color: white;
   text-decoration: none;
   //   border-bottom: rgb(248, 241, 241) 0.2px solid;
   width: 95%;
   margin-left: 3rem;
-
 
   &__items {
     display: flex;
@@ -41,7 +38,7 @@
 }
 
 .userProfile {
-
+padding-top: 2rem;
 font-family: "Quicksand", sans-serif;
   font-weight: normal;
   font-style: normal;
