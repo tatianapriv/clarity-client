@@ -7,7 +7,7 @@ import "./Mood.scss";
 
 import axios from "axios";
 
-export const api = `http://localhost:${process.env.REACT_APP_PORT}/api`;
+export const api = process.env.REACT_APP_URL;
 
 export const getMoodFromValue = (moodValue) => {
   let mood = "";
