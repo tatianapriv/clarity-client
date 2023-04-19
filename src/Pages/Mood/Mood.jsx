@@ -49,6 +49,7 @@ function Mood() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(comment);
+    console.log("api: ", api);
     axios
       .post(`${api}/mood`, {
         userId: "1234",
