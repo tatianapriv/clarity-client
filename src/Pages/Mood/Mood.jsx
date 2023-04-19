@@ -49,15 +49,14 @@ function Mood() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(comment);
-    console.log("api: ", api);
     axios
       .post(`${api}/mood`, {
         userId: "1234",
         value: moodValue,
         date: currentDate,
-        dateString: dateString,
-        timeString: timeString,
-        comment: comment,
+        dateString,
+        timeString,
+        comment,
       })
       .then(() => {
         navigate("/user");
