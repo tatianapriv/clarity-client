@@ -6,8 +6,22 @@ import UserProfile from "./Pages/UserProfile/UserProfile";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import BackgroundChanger from "./Components/BackgroundChanger/BackgroundChanger";
+import { useEffect } from "react";
+import axios from "axios";
+import { api } from "./Pages/Mood/Mood";
 
 function App() {
+  useEffect(() => {
+    axios
+      .get(`${api}/ping`)
+      .then((response) => {
+        console.log("res:", response.data);
+      })
+      .catch((error) => {
+        console.log("error:", error);
+      });
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
